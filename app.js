@@ -16,10 +16,7 @@ const campgroundRoutes = require("./routes/campgrounds"),
 	  commentRoutes    = require("./routes/comments"),
 	  indexRoutes	   = require("./routes/index");
 
-
-const url = "mongodb://localhost:27017/yel_camp_v12";
-
-mongoose.connect(url, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(() => {
+mongoose.connect("mongodb+srv://alex_belz:aswe3456@yelcamp-zrzm8.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(() => {
 	console.log("Connected to mongoDb");
 }).catch(err => {
 	console.log("ERROR: ", err.message);
