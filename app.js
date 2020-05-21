@@ -17,7 +17,7 @@ const campgroundRoutes = require("./routes/campgrounds"),
 	  indexRoutes	   = require("./routes/index");
 
 
-const url = process.env.DATABASEURL || "mongodb://localhost:27017/yel_camp_v12";
+const url = "mongodb://localhost:27017/yel_camp_v12";
 
 mongoose.connect(url, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(() => {
 	console.log("Connected to mongoDb");
