@@ -16,11 +16,13 @@ const campgroundRoutes = require("./routes/campgrounds"),
 	  commentRoutes    = require("./routes/comments"),
 	  indexRoutes	   = require("./routes/index");
 
-mongoose.connect("mongodb+srv://alex_belz:aswe3456@yelcamp-zrzm8.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(() => {
-	console.log("Connected to mongoDb");
-}).catch(err => {
-	console.log("ERROR: ", err.message);
-});
+
+const url = process.env.DATABASEURL || "mongodb://localhost:27017/yel_camp_v12";
+// mongoose.connect("mongodb+srv://alex_belz:aswe3456@yelcamp-zrzm8.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(() => {
+// 	console.log("Connected to mongoDb");
+// }).catch(err => {
+// 	console.log("ERROR: ", err.message);
+// });
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
