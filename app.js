@@ -18,7 +18,8 @@ const campgroundRoutes = require("./routes/campgrounds"),
 
 //mongodb://localhost:27017/yel_camp_v7
 //"mongodb+srv://alex_belz:aswe3456@yelcamp-zrzm8.mongodb.net/test?retryWrites=true&w=majority"
-const url = process.env.DATABASEURL || "mongodb://localhost:27017/yel_camp_v12";
+// const url = process.env.DATABASEURL || "mongodb://localhost:27017/yel_camp_v12";
+const url = process.env.DATABASEURL || "mongodb://mongo:27017/yel_camp_v12";
 
 mongoose.connect(url, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}).then(() => {
 	console.log("Connected to mongoDb");
